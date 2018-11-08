@@ -1,0 +1,125 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #FFFFFF;
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:1em;
+    height:auto;
+    width:95%;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding:0;
+}
+
+main {
+  height: auto;
+  text-align: center;
+  background-color: #FFFFFF;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+footer {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.backbutton {
+    background-color: #E5E7E9;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+}
+
+.button {
+    background-color: #FDD000;
+    color: black;
+    padding: 15px 16px;
+    display: inline-block;
+    font-size: 22px;
+    margin: 4px 2px;
+}
+
+.completedBtn {
+    background-color: #999999;
+    color: black;
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 22px;
+    margin: 4px 2px;
+}
+    
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* This will make all list items the same width */
+a {
+    width: 98%;
+}
+
+h1 {
+    font-size:24px;
+    font-weight:bold;
+    margin:0px;
+    padding:0px;
+}
+
+.progress {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.progress-bar {
+    background-color: #ffcc00;
+}
+@media screen and (max-width: 989px) {
+   .button {
+    background-color: #FDD000;
+    color: black;
+    padding: 15px 16px;
+    display: inline-block;
+    font-size: 1.2em;
+    word-wrap: break-word;
+    margin: 4px 2px;
+}
+.completedBtn {
+    background-color: #999999;
+    color: black;
+    padding: 15px 32px;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 4px 2px;
+}
+}

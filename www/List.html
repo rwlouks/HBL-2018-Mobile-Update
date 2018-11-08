@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+    <!-- Good default declaration:
+    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+        * Enable inline JS: add 'unsafe-inline' to default-src
+        * Enable eval(): add 'unsafe-eval' to default-src
+    * Create your own at http://cspisawesome.com
+    -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/list.css" />
+    <title>HuskyBucketList</title>
+</head>
+<body>
+    <nav>
+        <div>
+            <h1>Husky Bucket List</h1>
+            <button class="btn btn-sm backbutton" id="back">Back</button>
+            <button class="btn btn-sm backbutton" id="reset">Reset progress</button>
+            <!--<button class="btn btn-sm backbutton" id="logoff">Logoff</button>  Website only-->
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped" id="progBar" role="progressbar"
+                         aria-valuemin="0" aria-valuemax="85"></div>
+                </div>
+                <!--<progress id="progBar" value="0" max="85"></progress>-->
+                <h2 id="progText">Completed 0 out of 85 items!</h2>
+            </div>
+
+            <ul>
+                <li><a href="javascript:setItem(1);" id="item1" class="btn button">#1 Meet Blizzard</a></li>
+
+                <li><a href="javascript:setItem(2);" id="item2" class="btn button">#2 Walk the Bridge</a></li>
+
+                <li><a href="javascript:setItem(3);" id="item3" class="btn button">#3 Participate in <br> the All Nighter</a></li>
+
+                <li><a href="javascript:setItem(4);" id="item4" class="btn button">#4 Try Thimbleberries</a></li>
+
+                <li><a href="javascript:setItem(5);" id="item5" class="btn button">#5 Visit the <br> Mineral Museum</a></li>
+
+                <li><a href="javascript:setItem(6);" id="item6" class="btn button">#6 Enjoy the Pep Band</a></li>
+
+                <li><a href="javascript:setItem(7);" id="item7" class="btn button">#7 Go to K-Day</a></li>
+
+                <li><a href="javascript:setItem(8);" id="item8" class="btn button">#8 Check out Mont Ripley</a></li>
+
+                <li><a href="javascript:setItem(9);" id="item9" class="btn button">#9 Try the Tech Trails</a></li>
+
+                <li><a href="javascript:setItem(10);" id="item10" class="btn button">#10 Check out Broomball</a></li>
+
+                <li><a href="javascript:setItem(11);" id="item11" class="btn button">#11 Take a Sauna</a></li>
+
+                <li><a href="javascript:setItem(12);" id="item12" class="btn button">#12 Enjoy the Rozsa Center</a></li>
+
+                <li><a href="javascript:setItem(13);" id="item13" class="btn button">#13 Participate in<br> Copper Dog</a></li>
+
+                <li><a href="javascript:setItem(14);" id="item14" class="btn button">#14 Photograph the bridge</a></li>
+
+                <li><a href="javascript:setItem(15);" id="item15" class="btn button">#15 Revel in the Snow</a></li>
+
+                <li><a href="javascript:setItem(16);" id="item16" class="btn button">#16 Experience Tech Hockey</a></li>
+
+                <li><a href="javascript:setItem(17);" id="item17" class="btn button">#17 Shake the <br>President's Hand</a></li>
+
+                <li><a href="javascript:setItem(18);" id="item18" class="btn button">#18 Visit the Alumni House</a></li>
+
+                <li><a href="javascript:setItem(19);" id="item19" class="btn button">#19 Try an <br> Intramural Sport</a></li>
+
+                <li><a href="javascript:setItem(20);" id="item20" class="btn button">#20 Eat a Pickled Egg</a></li>
+
+                <li><a href="javascript:setItem(21);" id="item21" class="btn button">#21 Go Local</a></li>
+
+                <li><a href="javascript:setItem(22);" id="item22" class="btn button">#22 Experience a <br>Multicultural Event</a></li>
+
+                <li><a href="javascript:setItem(23);" id="item23" class="btn button">#23 Be Philanthropic</a></li>
+
+                <li><a href="javascript:setItem(24);" id="item24" class="btn button">#24 Find the <br> Stairs to Nowhere</a></li>
+
+                <li><a href="javascript:setItem(25);" id="item25" class="btn button">#25 Participate in <br>Make a Difference Day</a></li>
+
+                <li><a href="javascript:setItem(26);" id="item26" class="btn button">#26 Attend Parade <br> of Nations</a></li>
+
+                <li><a href="javascript:setItem(27);" id="item27" class="btn button">#27 Eat a Pasty</a></li>
+
+                <li><a href="javascript:setItem(28);" id="item28" class="btn button">#28 Join a <br>Student Organization</a></li>
+
+                <li><a href="javascript:setItem(29);" id="item29" class="btn button">#29 Visit Prince’s Point</a></li>
+
+                <li><a href="javascript:setItem(30);" id="item30" class="btn button">#30 Get a Career <br>Fair Portrait</a></li>
+
+                <li><a href="javascript:setItem(31);" id="item31" class="btn button">#31 Take an <br> Interesting Class</a></li>
+
+                <li><a href="javascript:setItem(32);" id="item32" class="btn button">#32 Check out the <br>War Memorial</a></li>
+
+                <li><a href="javascript:setItem(33);" id="item33" class="btn button">#33 Watch a Film <br>Board Movie</a></li>
+
+                <li><a href="javascript:setItem(34);" id="item34" class="btn button">#34 Purchase some <br>Michigan Tech Apparel</a></li>
+
+                <li><a href="javascript:setItem(35);" id="item35" class="btn button">#35 Attend University Welcome</a></li>
+
+                <li><a href="javascript:setItem(36);" id="item36" class="btn button">#36 Visit KBC</a></li>
+
+                <li><a href="javascript:setItem(37);" id="item37" class="btn button">#37 Eat a Local <br> Breakfast</a></li>
+
+                <li><a href="javascript:setItem(38);" id="item38" class="btn button">#38 Participate in <br> Safehouse</a></li>
+
+                <li><a href="javascript:setItem(39);" id="item39" class="btn button">#39 Tweet Les Cook</a></li>
+
+                <li><a href="javascript:setItem(40);" id="item40" class="btn button">#40 Visit the Wildlife<br> Art Gallery</a></li>
+
+                <li><a href="javascript:setItem(41);" id="item41" class="btn button">#41 Take part <br> in Heikinpäivä</a></li>
+
+                <li><a href="javascript:setItem(42);" id="item42" class="btn button">#42 Make a Snow Angel</a></li>
+
+                <li><a href="javascript:setItem(43);" id="item43" class="btn button">#43 Tour a Mine</a></li>
+
+                <li><a href="javascript:setItem(44);" id="item44" class="btn button">#44 Read <i>The Lode</i></a></li>
+
+                <li><a href="javascript:setItem(45);" id="item45" class="btn button">#45 Eat at the Ambassador</a></li>
+
+                <li><a href="javascript:setItem(46);" id="item46" class="btn button">#46 Visit your <br>Favorite Beach</a></li>
+
+                <li><a href="javascript:setItem(47);" id="item47" class="btn button">#47 Participate in <br>Career Fair</a></li>
+
+                <li><a href="javascript:setItem(48);" id="item48" class="btn button">#48 Check out <br> Brockway Mountain</a></li>
+
+                <li><a href="javascript:setItem(49);" id="item49" class="btn button">#49 Help a Husky</a></li>
+
+                <li><a href="javascript:setItem(50);" id="item50" class="btn button">#50 Attend Spring Fling</a></li>
+
+                <li><a href="javascript:setItem(51);" id="item51" class="btn button">#51 Eat at a <br> residence hall</a></li>
+
+                <li><a href="javascript:setItem(52);" id="item52" class="btn button">#52 Help with <br> Relay for Life</a></li>
+
+                <li><a href="javascript:setItem(53);" id="item53" class="btn button">#53 Winter Carnival Statue</a></li>
+
+                <li><a href="javascript:setItem(54);" id="item54" class="btn button">#54 Meet the <br>Dean of Students</a></li>
+
+                <li><a href="javascript:setItem(55);" id="item55" class="btn button">#55 Check out <br> Mind Trekkers</a></li>
+
+                <li><a href="javascript:setItem(56);" id="item56" class="btn button">#56 Visit Breakers</a></li>
+
+                <li><a href="javascript:setItem(57);" id="item57" class="btn button">#57 Visit Local <br> Waterfalls</a></li>
+
+                <li><a href="javascript:setItem(58);" id="item58" class="btn button">#58 Go Smelting or <br> Fishing</a></li>
+
+                <li><a href="javascript:setItem(59);" id="item59" class="btn button">#59 Climb the MEEM</a></li>
+
+                <li><a href="javascript:setItem(60);" id="item60" class="btn button">#60 Use the <br> Boulder Garden</a></li>
+
+                <li><a href="javascript:setItem(61);" id="item61" class="btn button">#61 Go Copper Country<br> Cruising</a></li>
+
+                <li><a href="javascript:setItem(62);" id="item62" class="btn button">#62 Use Study Hours</a></li>
+
+                <li><a href="javascript:setItem(63);" id="item63" class="btn button">#63 Eat at the <br>Downtowner</a></li>
+
+                <li><a href="javascript:setItem(64);" id="item64" class="btn button">#64 Visit a Local Copper<br>Gift Shop</a></li>
+
+                <li><a href="javascript:setItem(65);" id="item65" class="btn button">#65 Cardboard Boat Races</a></li>
+
+                <li><a href="javascript:setItem(66);" id="item66" class="btn button">#66 Find Campus Legends</a></li>
+
+                <li><a href="javascript:setItem(67);" id="item67" class="btn button">#67 Check out a <br> Study Room</a></li>
+
+                <li><a href="javascript:setItem(68);" id="item68" class="btn button">#68 Visit a Campus<br>Coffee Shop</a></li>
+
+                <li><a href="javascript:setItem(69);" id="item69" class="btn button">#69 Take a Fitness Class</a></li>
+
+                <li><a href="javascript:setItem(70);" id="item70" class="btn button">#70 Visit the Jampot</a></li>
+
+                <li><a href="javascript:setItem(71);" id="item71" class="btn button">#71 Look for the <br>Paulding Light</a></li>
+
+                <li><a href="javascript:setItem(72);" id="item72" class="btn button">#72 Try the Outdoor <br>Adventure Program</a></li>
+
+                <li><a href="javascript:setItem(73);" id="item73" class="btn button">#73 Visit the Archives</a></li>
+
+                <li><a href="javascript:setItem(74);" id="item74" class="btn button">#74 Volunteer!</a></li>
+
+                <li><a href="javascript:setItem(75);" id="item75" class="btn button">#75 The Place that Means<br>the Most</a></li>
+
+                <li><a href="javascript:setItem(76);" id="item76" class="btn button">#76 Check out <br> Social Media</a></li>
+
+                <li><a href="javascript:setItem(77);" id="item77" class="btn button">#77 Try a Winter Sport</a></li>
+
+                <li><a href="javascript:setItem(78);" id="item78" class="btn button">#78 Visit the <br>Calumet Theatre</a></li>
+
+                <li><a href="javascript:setItem(79);" id="item79" class="btn button">#79 Find the <br> First Classroom</a></li>
+
+                <li><a href="javascript:setItem(80);" id="item80" class="btn button">#80 Visit the <br> Husky Statue</a></li>
+
+                <li><a href="javascript:setItem(81);" id="item81" class="btn button">#81 Try a Local <br> Coffee Shop</a></li>
+
+                <li><a href="javascript:setItem(82);" id="item82" class="btn button">#82 Tech vs. Northern</a></li>
+
+                <li><a href="javascript:setItem(83);" id="item83" class="btn button">#83 Connect with Alumni</a></li>
+
+                <li><a href="javascript:setItem(84);" id="item84" class="btn button">#84 Participate in the <br>Class Tribute Program</a></li>
+
+                <li><a href="javascript:setItem(85);" id="item85" class="btn button">#85 GRADUATE!</a></li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <div>
+            Don't forget to share your experience with #HuskyBucketList <br>
+            This app was developed by Michigan Tech IT Oxygen Students. Need help? You can contact the Alumni Engagement with any questions at:
+            <a href="tel:906-487-2400">906-487-2400</a> or <a href="mailto:alumni@mtu.edu">alumni@mtu.edu</a>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/bootbox.min.js"></script>
+<script type="text/javascript" src="js/list.js"></script>
+
+
+<script type="text/javascript">
+    app.initialize();
+</script>
+
+<script type="text/javascript">
+    function setItem(item) {
+        //alert(item);
+        localStorage.setItem("currItem", "item" + item);
+        //alert(window.location);
+        window.location.assign("itempages/listItemX.html");
+        
+    }
+</script>
+
